@@ -2,13 +2,15 @@ package projeto_final_bloco1;
 
 import java.io.IOException;
 import java.util.Scanner;
+import model.Tipo;
 
 public class Menu {
 
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
-		int opcao, id;
+		int opcao, id, tipo;
+		float valor;
 		String peca;
 		
 		while(true) {
@@ -21,7 +23,7 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("            1 - Cadastrar Peça                       ");
 			System.out.println("            2 - Listar Todas as Peças                ");
-			System.out.println("            3 - Encontrar Peça por ID                 ");
+			System.out.println("            3 - Encontrar Peça por ID                ");
 			System.out.println("            4 - Atualizar Peça                       ");
 			System.out.println("            5 - Deletar Peça                         ");
 			System.out.println("            0 - Sair                                 ");
@@ -39,8 +41,16 @@ public class Menu {
 			switch (opcao) {
 			case 1:
 				System.out.println("\nCadastrar Peça\n");
+				
+				System.out.println("Informe o Tipo da Peça (1 - Parte de Baixo / 2 - Parte de Cima: ");
+				tipo = leia.nextInt();
+				
 				System.out.println("Informe o Nome da Peça a Ser Cadastrada: ");
 				peca = leia.next();
+				
+				System.out.println("Informe o Valor da Peça: ");
+				valor = leia.nextFloat();
+				
 				
 				keyPress();
 				break;
@@ -98,5 +108,5 @@ public static void keyPress() {
 			
 		}
 	}
-
+	
 }
